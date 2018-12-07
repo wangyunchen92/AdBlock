@@ -21,9 +21,14 @@ dispatch_async(dispatch_get_main_queue(), block); \
 
 #define kChannel              @"qsjk"
 #define KType                 @"qsjk"
-#define kJpushAppKey          @"bf435c4f4bb479fb6e11da1e"
+#define kJpushAppKey          @"a63625a1e48ac3f882a01e21"
 #define kUMAppKey             @"5b84aaabf29d9841bb000021"
 #define kIsProduct            YES
+
+
+#define KQQAdvID          @"1106792551"
+#define kQQAdvKPKey             @"4050040424854198"
+#define kQQAdvYSKey      @"5010848464352189"
 
 //应用名称(保证唯一性)
 #define ServiceName @"com.Fortune.youmeng"
@@ -132,6 +137,8 @@ static NSString *const FortuneNumber = @"FortuneNumber";
 // 记录用户状态
 static NSString *const LoginDate = @"LoginDate";
 static NSString *const isFirstLogin= @"isFirstLogin"; // 是否第一次启动
+
+static NSString *const IntAdPosition= @"IntAdPosition"; // 是否第一次启动
 
 static NSString *const CityManageChose = @"citymanageChose";
 

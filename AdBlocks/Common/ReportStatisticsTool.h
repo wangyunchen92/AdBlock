@@ -14,6 +14,7 @@
 + (void)reportStatisticBeginEventID:(NSString *)eventID jsonDataString:(NSString *)string;// 开始进入
 + (void)reportStatisticEndEventID:(NSString *)eventID jsonDataString:(NSString *)string;// 结束页面
 
++(NSString *)reportStatisticStringForString:(NSString *)str;
 
 // 进入页面
 + (void)reportStatisticBeginLogPageView:(NSString *)pageView;

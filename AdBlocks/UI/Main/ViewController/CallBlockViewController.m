@@ -67,6 +67,7 @@
 
 - (void)viewDidAppear:(BOOL)animated {
     //初始化pageControl
+    [super viewDidAppear:animated];
     UIPageControl *pageControl = [[UIPageControl alloc] initWithFrame:CGRectMake(0, self.pageView.frame.size.height + 70, kScreenWidth, 8)];
     pageControl.currentPageIndicatorTintColor = RGB(0, 166, 78);
     pageControl.pageIndicatorTintColor = UIColorFromRGB(0xababab);

@@ -15,6 +15,9 @@ static NSString *const GetApkUpdate = @"https://luck.youmeng.com/Api/App/getApkU
 
 static NSString *const GetStatus = @"https://luck.youmeng.com/Api/Ios/getStatus.html";
 
+static NSString *const GetAdPosition = @"https://luck.youmeng.com/api/folder/getAdPosition";
+
+
 static  NSString *const GetNewsNav = @"https://luck.youmeng.com/api/app/getNewsNav";
 
 static  NSString *const GetNews = @"https://luck.youmeng.com/api/app/getNews";

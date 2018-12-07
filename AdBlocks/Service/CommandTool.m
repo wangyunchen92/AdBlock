@@ -34,7 +34,7 @@
             model.url = GetApkUpdate;
             NSMutableDictionary *params = [NSMutableDictionary dictionary];
             [params addUnEmptyString:@"default_channel" forKey:@"channel_key"];
-            [params addUnEmptyString:@"com.ymnet.Fortune" forKey:@"package_name"];
+            [params addUnEmptyString:@"com.AdBlock.youmeng" forKey:@"package_name"];
             model.parameters = params;
             [[HttpClient sharedInstance]requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
                 [BasePopoverView hideHUDForWindow:YES];
@@ -84,6 +84,30 @@
                     [subscriber sendNext:@NO];
                     [subscriber sendCompleted];
                 }
+            } Failure:^(HttpRequest *request, HttpResponse *response) {
+                [subscriber sendError:nil];
+                [subscriber sendCompleted];
+            } RequsetStart:^{
+                
+            } ResponseEnd:^{
+                
+            }];
+            
+            return nil;
+        }];
+    }];
+    
+    self.command_getAdInformation = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            HttpRequestMode *model = [[HttpRequestMode alloc]init];
+            model.name= @"app广告位信息";
+            model.url = GetAdPosition;
+            [[HttpClient sharedInstance] requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
+                [BasePopoverView hideHUDForWindow:YES];
+                [UserDefaultsTool setInt:[[response.result stringForKey:@"object"] intValue] withKey:IntAdPosition];
+                
+                [subscriber sendError:nil];
+                [subscriber sendCompleted];
             } Failure:^(HttpRequest *request, HttpResponse *response) {
                 [subscriber sendError:nil];
                 [subscriber sendCompleted];

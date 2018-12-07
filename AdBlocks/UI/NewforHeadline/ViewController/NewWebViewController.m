@@ -12,15 +12,16 @@
 @interface NewWebViewController ()<UIWebViewDelegate>
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 @property(nonatomic,strong)YMWebProgressLayer *progressLayer; ///< 网页加载进度条
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewHeightConstraint;
 
 @end
 
 @implementation NewWebViewController
 - (void)viewDidLoad {
     [super viewDidLoad];
-
+    self.viewHeightConstraint.constant = iPhoneX ? 88 : 64;
     [self createNavWithTitle:@"" leftImage:@"Whiteback" rightImage:nil];
-    self.theSimpleNavigationBar.backgroundColor = RGB(18,132,254);
+    self.theSimpleNavigationBar.backgroundColor = RGB(0, 166, 78);
     [self.theSimpleNavigationBar.titleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
     self.webView.backgroundColor = [UIColor clearColor];
@@ -55,7 +56,7 @@
 -(YMWebProgressLayer *)progressLayer{
     if (!_progressLayer) {
         _progressLayer = [YMWebProgressLayer new];
-        _progressLayer.frame = CGRectMake(0, 62, kScreenWidth, 2);
+        _progressLayer.frame = CGRectMake(0, iPhoneX ? 62 + 22 : 62, kScreenWidth, 2);
         _progressLayer.hidden = NO;
         [self.theSimpleNavigationBar.layer addSublayer:_progressLayer];
         // [self.navigationController.navigationBar.layer addSublayer:_progressLayer];

@@ -7,11 +7,12 @@
 //
 
 #import "BaseViewController.h"
+#import "UIViewController+ResportStatistics.h"
 
 @interface BaseViewController ()
 
 @end
-@implementation BaseViewController
+    @implementation BaseViewController
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,12 +32,6 @@
     self.view.backgroundColor = kColorWeekWhite;
     [self loadBaseUIData];
     [self loadUIData];
-}
-
-- (void)viewDidUnload           // iOS 6 later, the viewDidUnload method is not used
-{
-    [super viewDidUnload];
-    // Release any retained subviews of the main view.
 }
 
 - (void)didReceiveMemoryWarning
@@ -83,9 +78,7 @@
     if([self.navigationController respondsToSelector:@selector(interactivePopGestureRecognizer)]) {
         self.navigationController.interactivePopGestureRecognizer.enabled = NO;
     }
-    
-
-    
+        
     [self setNeedsStatusBarAppearanceUpdate];
     [self.navigationController setNavigationBarHidden:YES animated:YES];
 }
@@ -143,8 +136,6 @@
 {
     
 }
-
-
 
 - (void)receiveLowMemoryWarning
 {

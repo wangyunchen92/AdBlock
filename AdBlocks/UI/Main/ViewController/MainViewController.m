@@ -61,6 +61,9 @@
 - (void)pushToNextView:(MainCellModel *)model {
     Class nextView = NSClassFromString(model.nextViewController);
     BaseViewController *view = [[nextView alloc] init];
+    
+    [ReportStatisticsTool reportStatisticSerialNumber:[NSString stringWithFormat:@"%@Sel",NSStringFromClass(nextView)] jsonDataString:[ReportStatisticsTool reportStatisticStringForString:[NSString stringWithFormat:@"%@Sel",NSStringFromClass(nextView)]]];
+    
     if (view) {
         [self.navigationController pushViewController:view animated:YES];
     }

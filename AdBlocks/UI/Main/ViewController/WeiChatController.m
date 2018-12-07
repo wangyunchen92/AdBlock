@@ -81,7 +81,6 @@
     
     self.pageControl = pageControl;
     
-    
     [self.pageView reloadData];
     [RACObserve(self, pag)subscribeNext:^(id x) {
         if (self.pag < self.dataArray.count - 1) {

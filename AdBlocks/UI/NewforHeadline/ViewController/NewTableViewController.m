@@ -13,6 +13,7 @@
 #import "NewsModel.h"
 #import "NewWebViewController.h"
 #import "AppDelegate.h"
+#import "QQAdTableViewCell.h"
 #import <MJRefresh/MJRefresh.h>
 
 
@@ -26,11 +27,12 @@
     if (self) {
         self.viewModel = [[NewHeadlineViewModel alloc] init];
         self.viewModel.typeString = type;
+        self.viewModel.adVC = self;
         self.needScrollForScrollerView = YES;
-
     }
     return self;
 }
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
@@ -42,8 +44,8 @@
         [self.tableView.mj_footer endRefreshing];
         [self.tableView reloadData];
     };
-    self.tableView.estimatedRowHeight =44.0f;
-    self.tableView.rowHeight =UITableViewAutomaticDimension;
+    self.tableView.estimatedRowHeight = 44.0f;
+    self.tableView.rowHeight = UITableViewAutomaticDimension;
     // Uncomment the following line to preserve selection between presentations.
     // self.clearsSelectionOnViewWillAppear = NO;
     
@@ -51,14 +53,15 @@
     // self.navigationItem.rightBarButtonItem = self.editButtonItem;
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([OneImageTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([OneImageTableViewCell class])];
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([ThreeImageTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([ThreeImageTableViewCell class])];
+    [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([QQAdTableViewCell class]) bundle:nil] forCellReuseIdentifier:NSStringFromClass([QQAdTableViewCell class])];
     
     self.tableView.mj_header = [MJRefreshNormalHeader headerWithRefreshingBlock:^{
-        self.viewModel.pagString =[NSString stringWithFormat:@"%ld",[self.viewModel.pagString integerValue] + 1];
+        self.viewModel.pagString = [NSString stringWithFormat:@"%ld",[self.viewModel.pagString integerValue] + 1];
         self.viewModel.isadd = NO;
         [self.viewModel.subject_getDate sendNext:@YES];
     }];
     self.tableView.mj_footer = [MJRefreshBackNormalFooter footerWithRefreshingBlock:^{
-        self.viewModel.pagString =[NSString stringWithFormat:@"%ld",[self.viewModel.pagString integerValue] + 1];
+        self.viewModel.pagString = [NSString stringWithFormat:@"%ld",[self.viewModel.pagString integerValue] + 1];
         self.viewModel.isadd = YES;
         [self.viewModel.subject_getDate sendNext:@YES];
     }];
@@ -73,23 +76,42 @@
     return self.viewModel.dataArray.count;
 }
 
-
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
-    NewsModel *model = [self.viewModel.dataArray objectAtIndex:indexPath.row];
-    if (model.typeString == OneImage_NewType) {
-        OneImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([OneImageTableViewCell class]) forIndexPath:indexPath];
-        [cell getDateForServer:model];
-        return cell;
-    } else if (model.typeString == ThreeImage_NewType) {
-        ThreeImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ThreeImageTableViewCell class]) forIndexPath:indexPath];
-        [cell getDateForServer:model];
+    id model = [self.viewModel.dataArray objectAtIndex:indexPath.row];
+    if ([model isKindOfClass:[NewsModel class]]) {
+        NewsModel *model = [self.viewModel.dataArray objectAtIndex:indexPath.row];
+        if (model.typeString == OneImage_NewType) {
+            OneImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([OneImageTableViewCell class]) forIndexPath:indexPath];
+            [cell getDateForServer:model];
+            return cell;
+        } else if (model.typeString == ThreeImage_NewType) {
+            ThreeImageTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([ThreeImageTableViewCell class]) forIndexPath:indexPath];
+            [cell getDateForServer:model];
+            return cell;
+        }
+    } else {
+        QQAdTableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:NSStringFromClass([QQAdTableViewCell class]) forIndexPath:indexPath];
+        cell.selectionStyle = UITableViewCellSelectionStyleNone;
+        UIView *subView = (UIView *)[cell.contentView viewWithTag:1000];
+        if ([subView superview]) {
+            [subView removeFromSuperview];
+        }
+        UIView *view = [self.viewModel.dataArray objectAtIndex:indexPath.row];
+        view.tag = 1000;
+        [cell.adView addSubview:view];
+
+        [view mas_makeConstraints:^(MASConstraintMaker *make) {
+            make.top.mas_equalTo(0);
+            make.left.mas_equalTo(0);
+            make.right.mas_equalTo(0);
+            make.bottom.mas_equalTo(0);
+        }];
         return cell;
     }
-
     // Configure the cell...
     return nil;
-
 }
+
 - (CGFloat)tableView:(UITableView *)tableView heightForFooterInSection:(NSInteger)section {
     return 1;
 }
@@ -148,7 +170,6 @@
     return YES;
 }
 */
-
 
 #pragma mark - Table view delegate
 

@@ -30,4 +30,27 @@
 + (void)reportStatisticEndLogPageView:(NSString *)pageView {
     [MobClick endLogPageView:pageView];
 }
+
+
++(NSString *)reportStatisticStringForString:(NSString *)str {
+    if ([str isEqualToString:@"CallBlockViewControllerSel"]) {
+        return @"电话点击";
+    }
+    if ([str isEqualToString:@"PictureClearListViewControllerSel"]) {
+        return @"相册清理点击";
+    }
+    if ([str isEqualToString:@"MessageGroupListViewControllerSel"]) {
+        return @"短信拦截点击";
+    }
+    if ([str isEqualToString:@"NetWorkSpeedViewControllerSel"]) {
+        return @"检测网速点击";
+    }
+    if ([str isEqualToString:@"WeiChatControllerSel"]) {
+        return @"微信清理点击";
+    }
+    if ([str isEqualToString:@"BatterViewControllerSel"]) {
+        return @"电池管理点击";
+    }
+    return nil;
+}
 @end

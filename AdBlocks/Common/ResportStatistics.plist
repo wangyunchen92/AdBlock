@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>ReportStatisticsVC</key>
+	<array>
+		<string>MessageGroupListViewController</string>
+		<string>PictureClearListViewController</string>
+		<string>WeiChatController</string>
+		<string>BatterViewController</string>
+		<string>NetWorkSpeedViewController</string>
+		<string>CallBlockViewController</string>
+		<string>MainViewController</string>
+	</array>
+	<key>ReportStatisticsAction</key>
+	<array/>
+</dict>
+</plist>

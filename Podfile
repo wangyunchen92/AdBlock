@@ -18,6 +18,7 @@ pod 'YYModel'
 pod 'OpenCV'
 pod 'XLForm', '~> 3.0'
 pod 'WYCPagController'
+pod 'JPush'
 
   # Pods for AdBlocks
 
