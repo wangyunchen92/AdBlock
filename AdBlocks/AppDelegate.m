@@ -67,7 +67,7 @@
     //发布需要移除
     [UMConfigure setEncryptEnabled:YES];
     
-    [UMConfigure setLogEnabled:YES];
+    [UMConfigure setLogEnabled:NO];
 //    [UMCommonLogManager setUpUMCommonLogManager];
     
 }

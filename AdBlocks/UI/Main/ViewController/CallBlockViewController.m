@@ -20,6 +20,10 @@
 @property (weak, nonatomic) IBOutlet UILabel *fiestLabel;
 @property (weak, nonatomic) IBOutlet UILabel *secendLabel;
 @property (weak, nonatomic) IBOutlet UILabel *threeLabel;
+@property (weak, nonatomic) IBOutlet UIView *noPremissionsView;
+@property (weak, nonatomic) IBOutlet UIView *staticView;
+@property (weak, nonatomic) IBOutlet UIScrollView *premissionsScrollView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *premissionTopConstraint;
 
 @end
 
@@ -28,6 +32,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
+    self.premissionTopConstraint.constant = iPhoneX ? 88 : 64;
     [self createNavWithTitle:@"电话拦截" leftImage:@"Whiteback" rightText:nil];
     self.theSimpleNavigationBar.backgroundColor = RGB(0, 166, 78);
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
@@ -90,15 +95,16 @@
         // 检测group id 及权限
         [[CallManager shareManager] getEnableStatus:^(CXCallDirectoryEnabledStatus enabledStatus, NSError *error) {
             if (error) {
-                [self showFail];
+                [self isshowView:NO];
                 return;
             }
             if (enabledStatus == CXCallDirectoryEnabledStatusUnknown) {
-                [self showFail];
+                [self isshowView:NO];
             } else if (enabledStatus == CXCallDirectoryEnabledStatusDisabled) {
-                [self showFail];
+                [self isshowView:NO];
             } else if (enabledStatus == CXCallDirectoryEnabledStatusEnabled) {
                 NSLog(@"来电权限已开启");
+                        [self isshowView:YES];
                 self.sureButton.backgroundColor = [UIColor grayColor];
                 [self.sureButton setTitle:@"已开启" forState:UIControlStateNormal];
                 self.sureButton.userInteractionEnabled = NO;
@@ -109,6 +115,7 @@
 
 - (void)showFail {
     [self.sureButton setTitle:@"知道了 去开启" forState:UIControlStateNormal];
+    [self isshowView:NO];
     
 }
 
@@ -181,6 +188,14 @@
             [self.navigationController popViewControllerAnimated:YES];
         });
     }];
+}
+- (void)isshowView:(BOOL)isPrimission {
+    self.boardView.hidden = isPrimission;
+    self.staticView.hidden = isPrimission;
+    self.sureButton.hidden = isPrimission;
+    self.premissionsScrollView.hidden = !isPrimission;
+    self.noPremissionsView.hidden = !isPrimission;
+    
 }
 
 /*

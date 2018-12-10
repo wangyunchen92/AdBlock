@@ -35,6 +35,11 @@
 		D55416EA219416B7003254E8 /* MessageGuildController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55416E8219416B7003254E8 /* MessageGuildController.xib */; };
 		D55416EE219422BD003254E8 /* AddMessageTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D55416EC219422BD003254E8 /* AddMessageTableViewCell.m */; };
 		D55416EF219422BD003254E8 /* AddMessageTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = D55416ED219422BD003254E8 /* AddMessageTableViewCell.xib */; };
+		D556901521BA599A001D1B86 /* PhoneIdentifyViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D556901321BA599A001D1B86 /* PhoneIdentifyViewController.m */; };
+		D556901621BA599A001D1B86 /* PhoneIdentifyViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D556901421BA599A001D1B86 /* PhoneIdentifyViewController.xib */; };
+		D556901A21BA64C6001D1B86 /* PhoneIndenDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D556901821BA64C6001D1B86 /* PhoneIndenDetailViewController.m */; };
+		D556901B21BA64C6001D1B86 /* PhoneIndenDetailViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D556901921BA64C6001D1B86 /* PhoneIndenDetailViewController.xib */; };
+		D556901F21BA685C001D1B86 /* CALayer+LayerColor.m in Sources */ = {isa = PBXBuildFile; fileRef = D556901E21BA685C001D1B86 /* CALayer+LayerColor.m */; };
 		D557DD6E21A6A02F0096DF63 /* UIViewController+ResportStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = D557DD6D21A6A02F0096DF63 /* UIViewController+ResportStatistics.m */; };
 		D557DD7021A6A6240096DF63 /* ResportStatistics.plist in Resources */ = {isa = PBXBuildFile; fileRef = D557DD6F21A6A6240096DF63 /* ResportStatistics.plist */; };
 		D557DD7321A6AD1E0096DF63 /* UIControl+ButtonResportStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = D557DD7221A6AD1E0096DF63 /* UIControl+ButtonResportStatistics.m */; };
@@ -290,6 +295,14 @@
 		D55416EB219422BD003254E8 /* AddMessageTableViewCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AddMessageTableViewCell.h; sourceTree = "<group>"; };
 		D55416EC219422BD003254E8 /* AddMessageTableViewCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AddMessageTableViewCell.m; sourceTree = "<group>"; };
 		D55416ED219422BD003254E8 /* AddMessageTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AddMessageTableViewCell.xib; sourceTree = "<group>"; };
+		D556901221BA599A001D1B86 /* PhoneIdentifyViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneIdentifyViewController.h; sourceTree = "<group>"; };
+		D556901321BA599A001D1B86 /* PhoneIdentifyViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneIdentifyViewController.m; sourceTree = "<group>"; };
+		D556901421BA599A001D1B86 /* PhoneIdentifyViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneIdentifyViewController.xib; sourceTree = "<group>"; };
+		D556901721BA64C6001D1B86 /* PhoneIndenDetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneIndenDetailViewController.h; sourceTree = "<group>"; };
+		D556901821BA64C6001D1B86 /* PhoneIndenDetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneIndenDetailViewController.m; sourceTree = "<group>"; };
+		D556901921BA64C6001D1B86 /* PhoneIndenDetailViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = PhoneIndenDetailViewController.xib; sourceTree = "<group>"; };
+		D556901D21BA685C001D1B86 /* CALayer+LayerColor.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CALayer+LayerColor.h"; sourceTree = "<group>"; };
+		D556901E21BA685C001D1B86 /* CALayer+LayerColor.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "CALayer+LayerColor.m"; sourceTree = "<group>"; };
 		D557DD6C21A6A02F0096DF63 /* UIViewController+ResportStatistics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIViewController+ResportStatistics.h"; sourceTree = "<group>"; };
 		D557DD6D21A6A02F0096DF63 /* UIViewController+ResportStatistics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+ResportStatistics.m"; sourceTree = "<group>"; };
 		D557DD6F21A6A6240096DF63 /* ResportStatistics.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ResportStatistics.plist; sourceTree = "<group>"; };
@@ -727,6 +740,60 @@
 			path = ViewController;
 			sourceTree = "<group>";
 		};
+		D556900D21BA5983001D1B86 /* PhoneIdentify */ = {
+			isa = PBXGroup;
+			children = (
+				D556900E21BA5983001D1B86 /* ViewModel */,
+				D556900F21BA5983001D1B86 /* Model */,
+				D556901021BA5983001D1B86 /* View */,
+				D556901121BA5983001D1B86 /* ViewController */,
+			);
+			path = PhoneIdentify;
+			sourceTree = "<group>";
+		};
+		D556900E21BA5983001D1B86 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		D556900F21BA5983001D1B86 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		D556901021BA5983001D1B86 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		D556901121BA5983001D1B86 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				D556901221BA599A001D1B86 /* PhoneIdentifyViewController.h */,
+				D556901321BA599A001D1B86 /* PhoneIdentifyViewController.m */,
+				D556901421BA599A001D1B86 /* PhoneIdentifyViewController.xib */,
+				D556901721BA64C6001D1B86 /* PhoneIndenDetailViewController.h */,
+				D556901821BA64C6001D1B86 /* PhoneIndenDetailViewController.m */,
+				D556901921BA64C6001D1B86 /* PhoneIndenDetailViewController.xib */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		D556901C21BA6846001D1B86 /* Layer+LayerColor */ = {
+			isa = PBXGroup;
+			children = (
+				D556901D21BA685C001D1B86 /* CALayer+LayerColor.h */,
+				D556901E21BA685C001D1B86 /* CALayer+LayerColor.m */,
+			);
+			path = "Layer+LayerColor";
+			sourceTree = "<group>";
+		};
 		D56A5E4421883C45000AAB31 /* AdBlocksMessage */ = {
 			isa = PBXGroup;
 			children = (
@@ -1020,12 +1087,12 @@
 		D5A5511F2181A6180098B87E /* Categories */ = {
 			isa = PBXGroup;
 			children = (
+				D556901C21BA6846001D1B86 /* Layer+LayerColor */,
 				D5A551202181A6180098B87E /* CMUtilities.h */,
 				D5A551212181A6180098B87E /* UIImage+FX */,
 				D5A551242181A6180098B87E /* UIButton+TouchAreaInsets */,
 				D5A551272181A6180098B87E /* NSDate+CustomDate */,
 				D5A5512A2181A6180098B87E /* UIAlertView */,
-				D5A5512D2181A6180098B87E /* LLSegment */,
 				D5A5512E2181A6180098B87E /* NSMutableURLRequest+Extend */,
 				D5A551312181A6180098B87E /* UIView+Layout */,
 				D5A551342181A6180098B87E /* UIColor+Hex */,
@@ -1073,13 +1140,6 @@
 				D5A5512C2181A6180098B87E /* UIAlertView+Block.h */,
 			);
 			path = UIAlertView;
-			sourceTree = "<group>";
-		};
-		D5A5512D2181A6180098B87E /* LLSegment */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = LLSegment;
 			sourceTree = "<group>";
 		};
 		D5A5512E2181A6180098B87E /* NSMutableURLRequest+Extend */ = {
@@ -1248,6 +1308,7 @@
 		D5A5516F2181A6180098B87E /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				D556900D21BA5983001D1B86 /* PhoneIdentify */,
 				D54F343721958190008E8BCC /* Mine */,
 				D5AA1F822189ADED0036129A /* PhoneClear */,
 				D56A5E6421885BB8000AAB31 /* Call */,
@@ -1810,6 +1871,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D52FC0C921885F0A00EB1A9A /* backSql.bundle in Resources */,
+				D556901B21BA64C6001D1B86 /* PhoneIndenDetailViewController.xib in Resources */,
 				D5AA1F802189ABF80036129A /* NetWorkSpeedViewController.xib in Resources */,
 				D5A551F22181A6180098B87E /* ThreeImageTableViewCell.xib in Resources */,
 				D5A551EA2181A6180098B87E /* LoginViewController.xib in Resources */,
@@ -1822,6 +1884,7 @@
 				D55416EF219422BD003254E8 /* AddMessageTableViewCell.xib in Resources */,
 				D5AA1F7B2189AAFB0036129A /* BatterViewController.xib in Resources */,
 				D53DCF7621AD14F500A95DA4 /* QQAdTableViewCell.xib in Resources */,
+				D556901621BA599A001D1B86 /* PhoneIdentifyViewController.xib in Resources */,
 				D5A551FD2181A6180098B87E /* NewTableViewController.xib in Resources */,
 				D52D9D0D2186AEF40035E7B2 /* CallBlockViewController.xib in Resources */,
 				D5F2187B21882D930059EC30 /* MessageGroupViewController.xib in Resources */,
@@ -1999,6 +2062,7 @@
 			files = (
 				D557DD7321A6AD1E0096DF63 /* UIControl+ButtonResportStatistics.m in Sources */,
 				D5F2187921882D930059EC30 /* MessageGroupListViewController.m in Sources */,
+				D556901A21BA64C6001D1B86 /* PhoneIndenDetailViewController.m in Sources */,
 				D5A5520A2181A6180098B87E /* HttpRequest.m in Sources */,
 				D5AA1FCD2189B2C60036129A /* UIView+YCExtension.m in Sources */,
 				D5F2187421882D930059EC30 /* MessageGroup.m in Sources */,
@@ -2098,6 +2162,7 @@
 				D5AA1FBA2189B2930036129A /* WKSimilarPhotoHeadView.m in Sources */,
 				D5A551E42181A6180098B87E /* BaseViewModel.m in Sources */,
 				D5A551D62181A6180098B87E /* NSMutableURLRequest+CMUtils.m in Sources */,
+				D556901F21BA685C001D1B86 /* CALayer+LayerColor.m in Sources */,
 				D5AA1FD12189B2C60036129A /* YCPhotoBrowserController.m in Sources */,
 				D5A551CE2181A6180098B87E /* NSDate+Extension.m in Sources */,
 				D5A552052181A6180098B87E /* YYKVStorage.m in Sources */,
@@ -2110,6 +2175,7 @@
 				D5AA1F962189AEA30036129A /* GetSimilarity.m in Sources */,
 				D5A551CD2181A6180098B87E /* WSDatePickerView.m in Sources */,
 				D5A551EB2181A6180098B87E /* DSNavViewController.m in Sources */,
+				D556901521BA599A001D1B86 /* PhoneIdentifyViewController.m in Sources */,
 				D5A551BF2181A6180098B87E /* HZLaunchImageViewController.m in Sources */,
 				D5A551C42181A6180098B87E /* ToolUtil.m in Sources */,
 				D5A551C32181A6180098B87E /* YMUpdateView.m in Sources */,
@@ -2385,10 +2451,13 @@
 				CODE_SIGN_ENTITLEMENTS = AdBlocks/AdBlocks.entitlements;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = BXNJAEDFYS;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AdBlocks/Service/UM",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AdBlocks/UI/PhoneIdentify/Model",
+					"$(PROJECT_DIR)/AdBlocks",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AdBlocks/Support/PrefixHeader.pch";
 				INFOPLIST_FILE = AdBlocks/Info.plist;
@@ -2444,6 +2513,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = AdBlockdev;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -2457,10 +2527,13 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = BXNJAEDFYS;
+				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/AdBlocks/Service/UM",
 					"$(PROJECT_DIR)",
+					"$(PROJECT_DIR)/AdBlocks/UI/PhoneIdentify/Model",
+					"$(PROJECT_DIR)/AdBlocks",
 				);
 				GCC_PREFIX_HEADER = "$(SRCROOT)/AdBlocks/Support/PrefixHeader.pch";
 				INFOPLIST_FILE = AdBlocks/Info.plist;
@@ -2516,6 +2589,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = adBlockDis;
 				TARGETED_DEVICE_FAMILY = 1;
+				VALID_ARCHS = "arm64 arm64e armv7 armv7s";
 			};
 			name = Release;
 		};

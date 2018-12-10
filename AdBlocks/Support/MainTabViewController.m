@@ -11,6 +11,7 @@
 #import "MainViewController.h"
 #import "MainNewHealineViewController.h"
 #import "MineViewController.h"
+#import "PhoneIdentifyViewController.h"
 
 
 
@@ -86,6 +87,9 @@
     MainViewController *mainView = [[MainViewController alloc] init];
     DSNavViewController *mNav    = [[DSNavViewController alloc] initWithRootViewController:mainView];
     
+    PhoneIdentifyViewController *phoneView = [[PhoneIdentifyViewController alloc] init];
+        DSNavViewController *pNav    = [[DSNavViewController alloc] initWithRootViewController:phoneView];
+    
     MainNewHealineViewController *hvc      = [[MainNewHealineViewController alloc] init];
 //    OCRReadIDCardViewController *fvc = [[OCRReadIDCardViewController alloc] init];
 //    UIViewController *evc = [[UIViewController alloc] init];
@@ -102,6 +106,12 @@
             selectImage:@"tabMainSel"
           unselectImage:@"tabMain"
                     tag:1];
+    
+    [self setTabBarItem:pNav
+                  title:@"查询"
+            selectImage:@"call_cha"
+          unselectImage:@"call_cha1"
+                    tag:2];
     
     [self setTabBarItem:hNav
                   title:@"热点"
@@ -121,7 +131,7 @@
 //          unselectImage:@"我的测算未选中"
 //                    tag:4];
     
-    self.viewControllers = @[mNav,hNav,miNav];
+    self.viewControllers = @[mNav,pNav,hNav,miNav];
 }
 
 - (void)constructNotLoginViewControllers

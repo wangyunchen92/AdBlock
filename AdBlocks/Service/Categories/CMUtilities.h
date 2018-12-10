@@ -31,3 +31,4 @@
 #import "UIImage+Color.h"
 #import "UIImage+FX.h"
 #import "UIButton+UIButtonExt.h"
+#import "CALayer+LayerColor.h"
