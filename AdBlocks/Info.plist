@@ -17,9 +17,9 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0.1</string>
+	<string>2.0.1</string>
 	<key>CFBundleVersion</key>
-	<string>1.0.0</string>
+	<string>2.0.0</string>
 	<key>LSApplicationCategoryType</key>
 	<string>请点击“允许”以允许访问。若不允许，会影响保存图片到相册功能的使用！</string>
 	<key>LSRequiresIPhoneOS</key>

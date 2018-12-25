@@ -36,13 +36,21 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Mainbg" translatesAutoresizingMaskIntoConstraints="NO" id="9K5-F4-2uV">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="260"/>
                                 </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="可为您识别150875个陌生号码" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TyZ-os-XDa">
+                                    <rect key="frame" x="78.5" y="207.5" width="218" height="19.5"/>
+                                    <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                    <color key="textColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.94901960780000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
                             </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
+                                <constraint firstAttribute="bottom" secondItem="TyZ-os-XDa" secondAttribute="bottom" constant="33" id="0Th-9M-K5X"/>
                                 <constraint firstItem="9K5-F4-2uV" firstAttribute="leading" secondItem="Yn1-oU-6at" secondAttribute="leading" id="25l-Fu-eZi"/>
                                 <constraint firstAttribute="height" constant="260" id="5WW-HT-tQf"/>
                                 <constraint firstAttribute="bottom" secondItem="9K5-F4-2uV" secondAttribute="bottom" id="L2a-Mv-M3g"/>
                                 <constraint firstItem="9K5-F4-2uV" firstAttribute="top" secondItem="Yn1-oU-6at" secondAttribute="top" id="MQ6-Q4-pPP"/>
+                                <constraint firstItem="TyZ-os-XDa" firstAttribute="centerX" secondItem="Yn1-oU-6at" secondAttribute="centerX" id="W5H-Ax-lSs"/>
                                 <constraint firstAttribute="trailing" secondItem="9K5-F4-2uV" secondAttribute="trailing" id="XUM-nM-YA9"/>
                             </constraints>
                         </view>

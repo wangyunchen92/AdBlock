@@ -17,7 +17,7 @@
 #import <MJRefresh/MJRefresh.h>
 
 
-@interface NewTableViewController ()<UIApplicationDelegate>
+@interface NewTableViewController ()<UIApplicationDelegate,UIScrollViewDelegate>
 @property (nonatomic, strong)NewHeadlineViewModel *viewModel;
 @end
 
@@ -120,10 +120,10 @@
     if (self.block_scroller) {
         self.block_scroller(scrollView.contentOffset.y);
     }
-    
     if (self.needScrollForScrollerView) {
         return;
     }
+
     if (!self.canScroll) {
         scrollView.contentOffset = CGPointZero;
     }
@@ -132,6 +132,17 @@
         scrollView.contentOffset = CGPointZero;
         [[NSNotificationCenter defaultCenter] postNotificationName:@"leaveTop" object:nil];//到顶通知父视图改变状态
     }
+    
+    CGFloat height = scrollView.frame.size.height;
+    CGFloat contentOffsetY = scrollView.contentOffset.y;
+    CGFloat bottomOffset = scrollView.contentSize.height - contentOffsetY;
+    if (bottomOffset <= height)
+    {
+        //在最底部
+        [self.tableView.mj_footer beginRefreshing];
+    }
+    
+    
     
     self.tableView.showsVerticalScrollIndicator = self.canScroll?YES:NO;
 }
@@ -198,5 +209,6 @@
     // Pass the selected object to the new view controller.
 }
 */
+
 
 @end

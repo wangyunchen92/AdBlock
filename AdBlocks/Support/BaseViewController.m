@@ -120,7 +120,7 @@
         self.modalPresentationCapturesStatusBarAppearance = NO;
     }
     //滑动手势
-    self.canSwipeBackToParentVC = NO;
+    self.canSwipeBackToParentVC = YES;
     UISwipeGestureRecognizer *swipeGesture = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(backToParentVC:)];
     swipeGesture.direction = UISwipeGestureRecognizerDirectionRight;
     [self.view addGestureRecognizer:swipeGesture];

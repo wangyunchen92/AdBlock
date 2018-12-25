@@ -64,7 +64,8 @@ static const NSInteger secondsCountDown = 3;
         self.launchImageView.userInteractionEnabled = YES;
         [self.launchImageView addGestureRecognizer:tap];
     }else{
-        self.launchImageView.image = [UIImage imageNamed:@"闪屏"];
+        self.launchImageView.image =  iPhoneX ? [UIImage imageNamed:@"闪屏"] :
+             [UIImage imageNamed:@"闪屏小"];;
     }
 }
 

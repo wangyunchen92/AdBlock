@@ -92,7 +92,6 @@
     [self.window makeKeyAndVisible];
     RACSubject *subject_init = [[RACSubject alloc] init];
     CommandTool *command = [[CommandTool alloc] init];
-    
     [[[[subject_init  flattenMap:^RACStream *(id value) {
         // App更新
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {

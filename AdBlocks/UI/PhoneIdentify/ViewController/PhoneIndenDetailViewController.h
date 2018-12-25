@@ -7,10 +7,12 @@
 //
 
 #import "BaseViewController.h"
+#import "PhoneTypeModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface PhoneIndenDetailViewController : BaseViewController
+@property (nonatomic, strong)PhoneTypeModel *model;
 
 @end
 

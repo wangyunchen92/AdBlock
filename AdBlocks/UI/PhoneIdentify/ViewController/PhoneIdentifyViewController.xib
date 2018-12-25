@@ -35,8 +35,8 @@
                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="call_cha" translatesAutoresizingMaskIntoConstraints="NO" id="dDt-Ux-qMN">
                                     <rect key="frame" x="5" y="18" width="23" height="19"/>
                                 </imageView>
-                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入您要查询的号码" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bmg-Rx-2ce">
-                                    <rect key="frame" x="38" y="0.0" width="297" height="55"/>
+                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="输入您要查询的手机号" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Bmg-Rx-2ce">
+                                    <rect key="frame" x="0.0" y="0.0" width="335" height="55"/>
                                     <nil key="textColor"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                     <textInputTraits key="textInputTraits"/>
@@ -48,14 +48,14 @@
                                 <constraint firstItem="dDt-Ux-qMN" firstAttribute="leading" secondItem="N8J-Ap-jYO" secondAttribute="leading" constant="5" id="4mz-bz-sNy"/>
                                 <constraint firstAttribute="height" constant="55" id="JkB-ik-wob"/>
                                 <constraint firstItem="Bmg-Rx-2ce" firstAttribute="top" secondItem="N8J-Ap-jYO" secondAttribute="top" id="PG7-6J-t0B"/>
+                                <constraint firstItem="Bmg-Rx-2ce" firstAttribute="centerX" secondItem="N8J-Ap-jYO" secondAttribute="centerX" id="XBm-p0-LU0"/>
                                 <constraint firstAttribute="trailing" secondItem="Bmg-Rx-2ce" secondAttribute="trailing" id="eeJ-hh-fqY"/>
                                 <constraint firstAttribute="bottom" secondItem="Bmg-Rx-2ce" secondAttribute="bottom" id="plh-cj-ChW"/>
-                                <constraint firstItem="Bmg-Rx-2ce" firstAttribute="leading" secondItem="dDt-Ux-qMN" secondAttribute="trailing" constant="10" id="tvD-7c-5t6"/>
                                 <constraint firstItem="dDt-Ux-qMN" firstAttribute="centerY" secondItem="N8J-Ap-jYO" secondAttribute="centerY" id="zL8-s0-nGh"/>
                             </constraints>
                         </view>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DNN-h6-V5V">
-                            <rect key="frame" x="92.5" y="268" width="190" height="50"/>
+                            <rect key="frame" x="92.5" y="257" width="190" height="50"/>
                             <color key="backgroundColor" red="0.29411764709999999" green="0.64705882349999999" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="adobeRGB1998"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="50" id="RPg-1G-FbM"/>
@@ -222,7 +222,7 @@
                         <constraint firstItem="j2U-cA-jY3" firstAttribute="trailing" secondItem="S34-86-JvV" secondAttribute="trailing" id="np0-Tb-Wiv"/>
                         <constraint firstItem="j2U-cA-jY3" firstAttribute="top" secondItem="S34-86-JvV" secondAttribute="bottom" constant="5" id="qjN-37-bfs"/>
                         <constraint firstItem="TvF-dd-nMe" firstAttribute="top" secondItem="uo7-z3-bv3" secondAttribute="bottom" constant="5" id="svl-yg-mm1"/>
-                        <constraint firstItem="DNN-h6-V5V" firstAttribute="top" secondItem="N8J-Ap-jYO" secondAttribute="bottom" constant="44" id="tOU-jL-cmI"/>
+                        <constraint firstItem="DNN-h6-V5V" firstAttribute="top" secondItem="N8J-Ap-jYO" secondAttribute="bottom" constant="33" id="tOU-jL-cmI"/>
                     </constraints>
                 </scrollView>
             </subviews>

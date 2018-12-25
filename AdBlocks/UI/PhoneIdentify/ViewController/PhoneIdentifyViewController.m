@@ -8,6 +8,7 @@
 
 #import "PhoneIdentifyViewController.h"
 #import "PhoneIndenDetailViewController.h"
+#import "PhoneIdentifyViewModel.h"
 //#import "IzdSdk/IzdRec.h"
 
 @interface PhoneIdentifyViewController ()
@@ -15,12 +16,13 @@
 @property (weak, nonatomic) IBOutlet NSLayoutConstraint *viewTopConstraint;
 @property (weak, nonatomic) IBOutlet UITextField *inputTextField;
 @property (weak, nonatomic) IBOutlet UIButton *sureButton;
+@property (nonatomic, strong)PhoneIdentifyViewModel *viewModel;
 
 @end
 
 @implementation PhoneIdentifyViewController
 - (void)loadUIData {
-    [self createNavWithTitle:@"电话查询" leftImage:@"Whiteback" rightImage:nil];
+    [self createNavWithTitle:@"电话查询" leftImage:nil rightImage:nil];
     self.theSimpleNavigationBar.backgroundColor = RGB(0, 166, 78);
     [self.theSimpleNavigationBar.titleButton setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
     self.theSimpleNavigationBar.bottomLineView.backgroundColor = [UIColor clearColor];
@@ -30,22 +32,28 @@
     self.searchView.layer.cornerRadius = 7;
     self.searchView.layer.masksToBounds = YES;
     self.viewTopConstraint.constant = iPhoneX ? 88 : 64;
-    
+    self.viewModel = [[PhoneIdentifyViewModel alloc] init];
 
+    self.viewModel.block_getData = ^(PhoneTypeModel * model){
+        PhoneIndenDetailViewController *pDetailVC = [[PhoneIndenDetailViewController alloc] init];
+        pDetailVC.model = model;
+        [self.navigationController pushViewController:pDetailVC animated:YES];
+    };
 }
+
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view from its nib.
     
     [self.inputTextField.rac_textSignal subscribeNext:^(NSString * x) {
-        BOOL islengh =  x.length > 0;
-        if (x.length > 0) {
-            [self.sureButton setBackgroundColor:[UIColor grayColor]];
+
+        if (x.length == 0) {
+//            [self.sureButton setBackgroundColor:[UIColor grayColor]];
             [self.sureButton setEnabled:NO];
         } else {
             [self.sureButton setBackgroundColor:RGB(75, 165, 85)];
-            [self.sureButton setEnabled:NO];
+            [self.sureButton setEnabled:YES];
         }
     }];
     
@@ -59,7 +67,8 @@
 //        NSLog(@"%ld", [result count]);
 //    }];
     
-    [self.navigationController pushViewController:[[PhoneIndenDetailViewController alloc] init] animated:YES];
+    [self.viewModel.subject_getData sendNext:self.inputTextField.text];
+//    [self.navigationController pushViewController:[[PhoneIndenDetailViewController alloc] init] animated:YES];
 }
 
 /*

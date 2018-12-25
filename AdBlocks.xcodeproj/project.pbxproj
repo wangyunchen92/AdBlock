@@ -43,6 +43,7 @@
 		D557DD6E21A6A02F0096DF63 /* UIViewController+ResportStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = D557DD6D21A6A02F0096DF63 /* UIViewController+ResportStatistics.m */; };
 		D557DD7021A6A6240096DF63 /* ResportStatistics.plist in Resources */ = {isa = PBXBuildFile; fileRef = D557DD6F21A6A6240096DF63 /* ResportStatistics.plist */; };
 		D557DD7321A6AD1E0096DF63 /* UIControl+ButtonResportStatistics.m in Sources */ = {isa = PBXBuildFile; fileRef = D557DD7221A6AD1E0096DF63 /* UIControl+ButtonResportStatistics.m */; };
+		D55C94D921BF5E50005E3984 /* PhoneIdentifyViewModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D55C94D821BF5E50005E3984 /* PhoneIdentifyViewModel.m */; };
 		D56A5E4721883C45000AAB31 /* MessageFilterExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = D56A5E4621883C45000AAB31 /* MessageFilterExtension.m */; };
 		D56A5E4B21883C45000AAB31 /* AdBlocksMessage.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = D56A5E4321883C45000AAB31 /* AdBlocksMessage.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		D56A5E602188434B000AAB31 /* MessageGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F2186021882D930059EC30 /* MessageGroup.m */; };
@@ -68,6 +69,7 @@
 		D5A0C3C6219EAF0000167F82 /* WebKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A0C3C5219EAF0000167F82 /* WebKit.framework */; };
 		D5A0C3C8219EAF0500167F82 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A0C3C7219EAF0500167F82 /* AVFoundation.framework */; };
 		D5A0C3CA219EAF0E00167F82 /* libxml2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D5A0C3C9219EAF0E00167F82 /* libxml2.tbd */; };
+		D5A4DA8C21D1D7AD00490268 /* BaseScroller.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A4DA8B21D1D7AD00490268 /* BaseScroller.m */; };
 		D5A550C82181A5BC0098B87E /* AdBlocksTests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A550C72181A5BC0098B87E /* AdBlocksTests.m */; };
 		D5A550D32181A5BC0098B87E /* AdBlocksUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A550D22181A5BC0098B87E /* AdBlocksUITests.m */; };
 		D5A551B72181A6180098B87E /* PGIndexBannerSubiew.m in Sources */ = {isa = PBXBuildFile; fileRef = D5A550E42181A6180098B87E /* PGIndexBannerSubiew.m */; };
@@ -189,6 +191,7 @@
 		D5AA1FD22189B2C60036129A /* YCPhotoBrowserCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D5AA1FCA2189B2C50036129A /* YCPhotoBrowserCell.m */; };
 		D5D0D4412194351400626E07 /* WeiChatController.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D0D43E2194351400626E07 /* WeiChatController.m */; };
 		D5D0D4422194351400626E07 /* WeiChatController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5D0D4402194351400626E07 /* WeiChatController.xib */; };
+		D5D7756A21BF64C40007EC85 /* PhoneTypeModel.m in Sources */ = {isa = PBXBuildFile; fileRef = D5D7756921BF64C40007EC85 /* PhoneTypeModel.m */; };
 		D5F2187221882D930059EC30 /* MessageManage.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F2185B21882D930059EC30 /* MessageManage.m */; };
 		D5F2187321882D930059EC30 /* MessageRule.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F2185E21882D930059EC30 /* MessageRule.m */; };
 		D5F2187421882D930059EC30 /* MessageGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = D5F2186021882D930059EC30 /* MessageGroup.m */; };
@@ -308,6 +311,8 @@
 		D557DD6F21A6A6240096DF63 /* ResportStatistics.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = ResportStatistics.plist; sourceTree = "<group>"; };
 		D557DD7121A6AD1E0096DF63 /* UIControl+ButtonResportStatistics.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIControl+ButtonResportStatistics.h"; sourceTree = "<group>"; };
 		D557DD7221A6AD1E0096DF63 /* UIControl+ButtonResportStatistics.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIControl+ButtonResportStatistics.m"; sourceTree = "<group>"; };
+		D55C94D721BF5E50005E3984 /* PhoneIdentifyViewModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneIdentifyViewModel.h; sourceTree = "<group>"; };
+		D55C94D821BF5E50005E3984 /* PhoneIdentifyViewModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneIdentifyViewModel.m; sourceTree = "<group>"; };
 		D56A5E4321883C45000AAB31 /* AdBlocksMessage.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = AdBlocksMessage.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		D56A5E4521883C45000AAB31 /* MessageFilterExtension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MessageFilterExtension.h; sourceTree = "<group>"; };
 		D56A5E4621883C45000AAB31 /* MessageFilterExtension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MessageFilterExtension.m; sourceTree = "<group>"; };
@@ -347,6 +352,8 @@
 		D5A0C3C5219EAF0000167F82 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		D5A0C3C7219EAF0500167F82 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
 		D5A0C3C9219EAF0E00167F82 /* libxml2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.tbd; path = usr/lib/libxml2.tbd; sourceTree = SDKROOT; };
+		D5A4DA8A21D1D7AC00490268 /* BaseScroller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BaseScroller.h; sourceTree = "<group>"; };
+		D5A4DA8B21D1D7AD00490268 /* BaseScroller.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BaseScroller.m; sourceTree = "<group>"; };
 		D5A550AB2181A5BB0098B87E /* AdBlocks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AdBlocks.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D5A550BC2181A5BC0098B87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D5A550C32181A5BC0098B87E /* AdBlocksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AdBlocksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -578,6 +585,8 @@
 		D5D0D43E2194351400626E07 /* WeiChatController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeiChatController.m; sourceTree = "<group>"; };
 		D5D0D43F2194351400626E07 /* WeiChatController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeiChatController.h; sourceTree = "<group>"; };
 		D5D0D4402194351400626E07 /* WeiChatController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WeiChatController.xib; sourceTree = "<group>"; };
+		D5D7756821BF64C40007EC85 /* PhoneTypeModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneTypeModel.h; sourceTree = "<group>"; };
+		D5D7756921BF64C40007EC85 /* PhoneTypeModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneTypeModel.m; sourceTree = "<group>"; };
 		D5F2185B21882D930059EC30 /* MessageManage.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageManage.m; sourceTree = "<group>"; };
 		D5F2185C21882D930059EC30 /* MessageManage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MessageManage.h; sourceTree = "<group>"; };
 		D5F2185E21882D930059EC30 /* MessageRule.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MessageRule.m; sourceTree = "<group>"; };
@@ -754,6 +763,8 @@
 		D556900E21BA5983001D1B86 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				D55C94D721BF5E50005E3984 /* PhoneIdentifyViewModel.h */,
+				D55C94D821BF5E50005E3984 /* PhoneIdentifyViewModel.m */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -761,6 +772,8 @@
 		D556900F21BA5983001D1B86 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				D5D7756821BF64C40007EC85 /* PhoneTypeModel.h */,
+				D5D7756921BF64C40007EC85 /* PhoneTypeModel.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -768,6 +781,8 @@
 		D556901021BA5983001D1B86 /* View */ = {
 			isa = PBXGroup;
 			children = (
+				D5A4DA8A21D1D7AC00490268 /* BaseScroller.h */,
+				D5A4DA8B21D1D7AD00490268 /* BaseScroller.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -917,11 +932,11 @@
 		D5A550AD2181A5BB0098B87E /* AdBlocks */ = {
 			isa = PBXGroup;
 			children = (
-				D52FC0C821885F0A00EB1A9A /* backSql.bundle */,
 				D5F2187E21882E5D0059EC30 /* AdBlocks.entitlements */,
 				D5A550E12181A6180098B87E /* AppDelegate.h */,
 				D5A551B52181A6180098B87E /* AppDelegate.m */,
 				D5A550BC2181A5BC0098B87E /* Info.plist */,
+				D52FC0C821885F0A00EB1A9A /* backSql.bundle */,
 				D5A5516F2181A6180098B87E /* UI */,
 				D5A5519A2181A6180098B87E /* Business */,
 				D5A5516B2181A6180098B87E /* Common */,
@@ -2101,6 +2116,7 @@
 				D5A551DD2181A6180098B87E /* UIButton+Touch.m in Sources */,
 				D5F2187C21882D930059EC30 /* MessageRuleChoseViewController.m in Sources */,
 				D5A551BA2181A6180098B87E /* TPKeyboardAvoidingTableView.m in Sources */,
+				D55C94D921BF5E50005E3984 /* PhoneIdentifyViewModel.m in Sources */,
 				D5A551C02181A6180098B87E /* CommandTool.m in Sources */,
 				D5AA1FCF2189B2C60036129A /* YCPhotoBrowserCellHelper.m in Sources */,
 				D5A552042181A6180098B87E /* YYCache.m in Sources */,
@@ -2125,6 +2141,7 @@
 				D5AA1FB92189B2930036129A /* WKSimilarPhotoCell.m in Sources */,
 				D5A551E02181A6180098B87E /* UITextField+Extension.m in Sources */,
 				D5A551C12181A6180098B87E /* MBProgressHUD+Add.m in Sources */,
+				D5A4DA8C21D1D7AD00490268 /* BaseScroller.m in Sources */,
 				D5F2187A21882D930059EC30 /* MessageGroupViewController.m in Sources */,
 				D5A551F52181A6180098B87E /* YMWebProgressLayer.m in Sources */,
 				D5A551C62181A6180098B87E /* ToolUtil+PublicParam.m in Sources */,
@@ -2162,6 +2179,7 @@
 				D5AA1FBA2189B2930036129A /* WKSimilarPhotoHeadView.m in Sources */,
 				D5A551E42181A6180098B87E /* BaseViewModel.m in Sources */,
 				D5A551D62181A6180098B87E /* NSMutableURLRequest+CMUtils.m in Sources */,
+				D5D7756A21BF64C40007EC85 /* PhoneTypeModel.m in Sources */,
 				D556901F21BA685C001D1B86 /* CALayer+LayerColor.m in Sources */,
 				D5AA1FD12189B2C60036129A /* YCPhotoBrowserController.m in Sources */,
 				D5A551CE2181A6180098B87E /* NSDate+Extension.m in Sources */,

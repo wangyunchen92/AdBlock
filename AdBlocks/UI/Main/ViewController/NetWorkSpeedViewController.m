@@ -77,7 +77,7 @@
     self.numberLb.textAlignment = NSTextAlignmentCenter;
     self.numberLb.font = [UIFont systemFontOfSize:20 weight:UIFontWeightMedium];
     self.numberLb.backgroundColor = [UIColor clearColor];
-    self.numberLb.textColor = [UIColor whiteColor];
+    self.numberLb.textColor = RGB(0, 166, 78);
     [self.view addSubview:self.numberLb];
     
     UIButton *button = [UIButton buttonWithType:UIButtonTypeCustom];
@@ -91,7 +91,7 @@
     UILabel *message = [[UILabel alloc]initWithFrame:CGRectMake(0, CGRectGetMaxY(_numberLb.frame)+10, kScreenWidth, 18)];
     message.textAlignment = NSTextAlignmentCenter;
     message.backgroundColor = [UIColor clearColor];
-    message.textColor = [UIColor whiteColor];
+    message.textColor = RGB(0, 166, 78);
     message.font = [UIFont systemFontOfSize:15 weight:UIFontWeightMedium];
     [self.view addSubview:message];
     self.messageLabel = message;

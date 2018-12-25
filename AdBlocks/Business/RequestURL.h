@@ -27,4 +27,7 @@ static NSString *const WeaterApi = @"https://luck.youmeng.com/Api/Weather/getWea
 static  NSString *const AddFeedBack  = @"https://luck.youmeng.com/Api/Weather/index.html";// 用户添加反馈
 
 
+static  NSString *const GetPhoneInfo = @"https://luck.youmeng.com/Api/Lj/getPhoneInfo.html";
+
+
 #endif /* RequestURL_h */
