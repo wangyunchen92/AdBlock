@@ -13,35 +13,7 @@
 @implementation MBProgressHUD (Add)
 
 #pragma mark 显示信息
-+ (MBProgressHUD *)showGifToView:(UIView *)view{
-    
-    MBProgressHUD *hud = [MBProgressHUD showHUDAddedTo:view animated:YES];
-    //使用SDWebImage 放入gif 图片
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"gif" ofType:@"gif"];
-    NSData *data = [NSData dataWithContentsOfFile:path];
-    UIImage *image = [UIImage sd_animatedGIFWithData:data];
-    
-    //自定义imageView
-    UIImageView *cusImageV = [[UIImageView alloc] initWithImage:image];
-    
-    //设置hud模式
-    hud.mode = MBProgressHUDModeCustomView;
-    
-    //设置在hud影藏时将其从SuperView上移除,自定义情况下默认为NO
-    hud.removeFromSuperViewOnHide = YES;
-    
-    //设置方框view为该模式后修改颜色才有效果
-    
-    hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
-    
-    //设置方框view背景色
-    hud.bezelView.backgroundColor = [UIColor clearColor];
-    
-    //设置总背景view的背景色，并带有透明效果
-   // hud.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.3];
-    hud.customView = cusImageV;
-    return hud;
-}
+
 + (void)show:(NSString *)text icon:(NSString *)icon view:(UIView *)view
 {
     

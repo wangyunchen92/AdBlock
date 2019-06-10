@@ -343,7 +343,8 @@
         layout.sectionInset = UIEdgeInsetsMake(distance, distance, distance, distance);
         layout.minimumLineSpacing = distance;
         layout.minimumInteritemSpacing = distance;
-        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(iPhoneX ? 22 : 0, 64, kScreenWidth, kScreenHeight-64)
+        CGFloat height = iPhoneX ? 88 : 64;
+        _collectionView = [[UICollectionView alloc] initWithFrame:CGRectMake(iPhoneX ? 22 : 0,height, kScreenWidth, kScreenHeight-height)
                                              collectionViewLayout:layout];
         _collectionView.dataSource = self;
         _collectionView.delegate = self;
@@ -357,15 +358,15 @@
         
         _collectionView.autoresizingMask = UIViewAutoresizingFlexibleWidth | UIViewAutoresizingFlexibleHeight;
         _collectionView.delaysContentTouches = NO;
-        if (@available(iOS 11,*)) {
-            if ([UIScreen mainScreen].bounds.size.height == 812) {
-                _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
-                CGFloat h1 = [UIApplication sharedApplication].statusBarFrame.size.height;
-                CGFloat h2 = self.navigationController.navigationBar.bounds.size.height;
-                _collectionView.contentInset = UIEdgeInsetsMake(h1 + h2, 0, 0, 0);
-                _collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(h1 + h2, 0, 0, 0);
-            }
-        }
+//        if (@available(iOS 11,*)) {
+//            if ([UIScreen mainScreen].bounds.size.height == 812) {
+//                _collectionView.contentInsetAdjustmentBehavior = UIScrollViewContentInsetAdjustmentNever;
+//                CGFloat h1 = [UIApplication sharedApplication].statusBarFrame.size.height;
+//                CGFloat h2 = self.navigationController.navigationBar.bounds.size.height;
+//                _collectionView.contentInset = UIEdgeInsetsMake(h1 + h2, 0, 0, 0);
+//                _collectionView.scrollIndicatorInsets = UIEdgeInsetsMake(h1 + h2, 0, 0, 0);
+//            }
+//        }
         UIEdgeInsets inset = _collectionView.contentInset;
         _collectionView.contentInset = UIEdgeInsetsMake(inset.top, inset.left, 50, inset.right);
         _collectionView.scrollIndicatorInsets = _collectionView.contentInset;

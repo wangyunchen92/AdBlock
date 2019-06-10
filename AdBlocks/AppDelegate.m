@@ -120,56 +120,34 @@
             //                launchVC.block_activityViewClicked = ^(ActivityViewClickedTag clickedTag){
             //                    if (!(clickedTag == kActivityViewClickedView)) {
             
-            [[command.command_getAdInformation.executionSignals switchToLatest] subscribeNext:^(id x) {
+            [[command.command_checkAdv.executionSignals switchToLatest] subscribeNext:^(id x) {
                 [subscriber sendNext:@YES];
                 [subscriber sendCompleted];
             }];
             
-            [command.command_getAdInformation.errors subscribeNext:^(id x) {
+            [command.command_checkAdv.errors subscribeNext:^(id x) {
                 [subscriber sendNext:@YES];
                 [subscriber sendCompleted];
             }];
-            [command.command_getAdInformation execute:@YES];
+            [command.command_checkAdv execute:@YES];
             return nil;
         }];
         
     }] flattenMap:^RACStream *(id value) {
         return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
 
+            self.mainNum = 32;
+            MainTabViewController *mainCtl = [[MainTabViewController alloc] init];
+            self.window.rootViewController = mainCtl;
+            
+            if ([UserDefaultsTool getBoolWithKey:@"coopen_ad"]) {
+                [self initQQAdv];
+            }
+            [subscriber sendNext:@YES];
+            [subscriber sendCompleted];
+            
             [[command.command_isReview.executionSignals switchToLatest] subscribeNext:^(NSNumber *x) {
-                self.mainNum = 32;
-                MainTabViewController *mainCtl = [[MainTabViewController alloc] init];
-                self.window.rootViewController = mainCtl;
-                if ([x boolValue]) {
-                    //开屏广告初始化并展示代码
-                    GDTSplashAd *splash = [[GDTSplashAd alloc] initWithAppId:KQQAdvID placementId:kQQAdvKPKey];
-                    splash.delegate = self; //设置代理 //根据iPhone设备不同设置不同背景图
-                    if ([[UIScreen mainScreen] bounds].size.height >= 568.0f) {
-                        splash.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LaunchImage-568h"]];
-                    } else {
-                        splash.backgroundColor = [UIColor colorWithPatternImage:[UIImage
-imageNamed:@"LaunchImage"]];
-                    }
-                    UIImage *splashImage = [UIImage imageNamed:@"SplashNormal"];
-                    splash.fetchDelay = 3; //开发者可以设置开屏拉取时间，超时则放弃展示 //[可选]拉取并展示全屏开屏广告
-                    UIImage *backgroundImage = [AppDelegate imageResize:splashImage
-                                                            andResizeTo:[UIScreen mainScreen].bounds.size];
-                    splash.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
-                    UIView *adView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
-                    UIImageView *imageView = [[UIImageView alloc] initWithImage:IMAGE_NAME(@"adView")];
-                    [adView addSubview:imageView];
-                    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
-                        make.center.mas_equalTo(0);
-                    }];
-                    [splash loadAdAndShowInWindow:self.window withBottomView:adView];
-                    self.splash = splash;
-                    
-                    [subscriber sendNext:@YES];
-                    [subscriber sendCompleted];
-                } else {
-                    [subscriber sendNext:@YES];
-                    [subscriber sendCompleted];
-                }
+
             }];
             
             [command.command_isReview.errors subscribeNext:^(id x) {
@@ -190,6 +168,32 @@ imageNamed:@"LaunchImage"]];
     }];
     
     [subject_init sendNext:@1];
+}
+
+
+- (void)initQQAdv {
+    //开屏广告初始化并展示代码
+    GDTSplashAd *splash = [[GDTSplashAd alloc] initWithAppId:KQQAdvID placementId:kQQAdvKPKey];
+    splash.delegate = self; //设置代理 //根据iPhone设备不同设置不同背景图
+    if ([[UIScreen mainScreen] bounds].size.height >= 568.0f) {
+        splash.backgroundColor = [UIColor colorWithPatternImage:[UIImage imageNamed:@"LaunchImage-568h"]];
+    } else {
+        splash.backgroundColor = [UIColor colorWithPatternImage:[UIImage
+                                                                 imageNamed:@"LaunchImage"]];
+    }
+    UIImage *splashImage = [UIImage imageNamed:@"SplashNormal"];
+    splash.fetchDelay = 3; //开发者可以设置开屏拉取时间，超时则放弃展示 //[可选]拉取并展示全屏开屏广告
+    UIImage *backgroundImage = [AppDelegate imageResize:splashImage
+                                            andResizeTo:[UIScreen mainScreen].bounds.size];
+    splash.backgroundColor = [UIColor colorWithPatternImage:backgroundImage];
+    UIView *adView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, kScreenWidth, 100)];
+    UIImageView *imageView = [[UIImageView alloc] initWithImage:IMAGE_NAME(@"adView")];
+    [adView addSubview:imageView];
+    [imageView mas_makeConstraints:^(MASConstraintMaker *make) {
+        make.center.mas_equalTo(0);
+    }];
+    [splash loadAdAndShowInWindow:self.window withBottomView:adView];
+    self.splash = splash;
 }
 
 

@@ -4,6 +4,7 @@
 //
 //  Created by Sj03 on 2017/11/21.
 //  Copyright © 2017年 Sj03. All rights reserved.
+
 //
 
 #ifndef Defines_h
@@ -22,7 +23,7 @@ dispatch_async(dispatch_get_main_queue(), block); \
 #define kChannel              @"qsjk"
 #define KType                 @"qsjk"
 #define kJpushAppKey          @"a63625a1e48ac3f882a01e21"
-#define kUMAppKey             @"5b84aaabf29d9841bb000021"
+#define kUMAppKey             @"5cde7f924ca35743ee000efb"
 #define kIsProduct            YES
 
 

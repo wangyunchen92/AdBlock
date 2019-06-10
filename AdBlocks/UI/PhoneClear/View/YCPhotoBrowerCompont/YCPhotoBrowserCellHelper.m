@@ -9,6 +9,7 @@
 #import "YCPhotoBrowserCellHelper.h"
 #import<SDWebImage/UIImageView+WebCache.h>
 
+
 @interface YCPhotoBrowserCellHelper ()
 @property(nonatomic,strong)id                   imagesOrURL;
 @property(nonatomic,assign)YCPhotoSourceType    sourceType;
@@ -48,11 +49,12 @@
 }
 
 - (UIImage *)placeholderImage{
-    if (self.sourceType == YCPhotoSourceType_AlterURL){
-        NSURL *url = (NSURL *)self.imagesOrURL;
-        UIImage *smallImage = [[SDWebImageManager sharedManager].imageCache imageFromDiskCacheForKey:url.absoluteString];
-        return smallImage;
-    }
+//    if (self.sourceType == YCPhotoSourceType_AlterURL){
+//        NSURL *url = (NSURL *)self.imagesOrURL;
+//        UIImage *smallImage = [[SDWebImageManager sharedManager].imageCache imageFromDiskCacheForKey:url.absoluteString];
+//        
+//        return smallImage;
+//    }
     return self.placeholder;
 }
 - (void)setPlaceholderImage:(UIImage *)image{

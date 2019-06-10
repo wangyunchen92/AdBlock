@@ -12,6 +12,7 @@
 @property (nonatomic, strong)RACCommand *command_haveNewVersion; // 检查新版本
 @property (nonatomic, strong)RACCommand *command_isReview; // 检查新版本
 @property (nonatomic, strong)RACCommand *command_getAdInformation;
+@property (nonatomic, strong)RACCommand *command_checkAdv; //检查广告
 
 
 @end

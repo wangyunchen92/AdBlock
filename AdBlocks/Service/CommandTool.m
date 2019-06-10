@@ -97,28 +97,72 @@
         }];
     }];
     
-    self.command_getAdInformation = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
-        return [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+    
+    
+    self.command_checkAdv = [[RACCommand alloc] initWithSignalBlock:^RACSignal *(id input) {
+        
+        __block NSInteger i = 0;
+        
+        RACSignal *signal1 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
             HttpRequestMode *model = [[HttpRequestMode alloc]init];
             model.name= @"app广告位信息";
             model.url = GetAdPosition;
             [[HttpClient sharedInstance] requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
+                
+                i = i + 1;
                 [BasePopoverView hideHUDForWindow:YES];
                 [UserDefaultsTool setInt:[[response.result stringForKey:@"object"] intValue] withKey:IntAdPosition];
+                if (i > 1) {
+                    [subscriber sendNext:@YES];
+                    [subscriber sendCompleted];
+                }
                 
-                [subscriber sendError:nil];
-                [subscriber sendCompleted];
             } Failure:^(HttpRequest *request, HttpResponse *response) {
-                [subscriber sendError:nil];
-                [subscriber sendCompleted];
+                [subscriber sendNext:nil];
+                
             } RequsetStart:^{
                 
             } ResponseEnd:^{
                 
             }];
-            
-            return nil;
+            return  nil;
         }];
+        
+        RACSignal *signal2 = [RACSignal createSignal:^RACDisposable *(id<RACSubscriber> subscriber) {
+            HttpRequestMode *model = [[HttpRequestMode alloc]init];
+            model.name= @"广告位";
+            model.url = GetChannel;
+            NSMutableDictionary *params = [NSMutableDictionary dictionary];
+            [params addUnEmptyString:@"com.AdBlock.youmeng" forKey:@"channel_key"];
+            [params addUnEmptyString:@"com.AdBlock.youmeng" forKey:@"package_name"];
+            [params addUnEmptyString:@"lj" forKey:@"show_key"];
+            model.parameters = params;
+            [[HttpClient sharedInstance]requestApiWithHttpRequestMode:model Success:^(HttpRequest *request, HttpResponse *response) {
+                i = i + 1;
+                BOOL open = [[response.result stringForKey:@"coopen_ad"] isEqualToString:@"1"] ? YES : NO;
+                [UserDefaultsTool setBool:open withKey:@"coopen_ad"];
+                
+                if (i > 1) {
+                    [subscriber sendNext:@YES];
+                    [subscriber sendCompleted];
+                }
+                
+            } Failure:^(HttpRequest *request, HttpResponse *response) {
+                [subscriber sendNext:@YES];
+                [UserDefaultsTool setBool:NO withKey:@"coopen_ad"];
+            } RequsetStart:^{
+                
+            } ResponseEnd:^{
+                
+            }];
+            return  nil;
+        }];
+        
+        
+        RACSignal *concatSignal = [RACSignal merge:@[signal1, signal2]];
+        
+        return concatSignal;
+
     }];
 
  
