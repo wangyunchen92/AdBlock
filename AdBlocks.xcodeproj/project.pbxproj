@@ -1943,7 +1943,7 @@
 			files = (
 			);
 			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-AdBlocks/Pods-AdBlocks-resources.sh",
+				"${SRCROOT}/Pods/Target Support Files/Pods-AdBlocks/Pods-AdBlocks-resources.sh",
 				"${PODS_ROOT}/MJRefresh/MJRefresh/MJRefresh.bundle",
 				"${PODS_ROOT}/XLForm/XLForm/XLForm.bundle",
 			);
@@ -1954,7 +1954,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-AdBlocks/Pods-AdBlocks-resources.sh\"\n";
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AdBlocks/Pods-AdBlocks-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		495A9CAAAB3A3EDE9E067044 /* [CP] Check Pods Manifest.lock */ = {
